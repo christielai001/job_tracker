@@ -11,6 +11,12 @@ def health_check(request):
     return Response({"status": "ok"})
 
 # Create your views here.
+# automatically provides all CRUD endpoints
 class Job_ApplicationViewSet(viewsets.ModelViewSet):
-    queryset = Job_Application.objects.all()
     serializer_class = Job_ApplicationSerializer
+
+    def get_queryset(self):
+        return Job_Application.objects.filter(user=self.request.user)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
