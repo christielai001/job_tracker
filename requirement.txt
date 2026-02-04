@@ -1,0 +1,4 @@
+Django
+djangorestframework
+djangoframework-simplejwt
+python-dotenv
