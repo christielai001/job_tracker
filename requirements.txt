@@ -1,4 +1,4 @@
 Django
 djangorestframework
-djangoframework-simplejwt
+djangorestframework-simplejwt
 python-dotenv
